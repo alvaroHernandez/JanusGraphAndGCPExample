@@ -1,0 +1,29 @@
+replicaCount: 3
+
+service:
+  type: LoadBalancer
+  serviceAnnotations:
+    cloud.google.com/load-balancer-type: "Internal"
+
+elasticsearch:
+  esConfig: {
+    elasticsearch.yml:
+      script.engine.groovy.inline.update = true
+  }
+  deploy: true
+
+properties:
+  storage.backend: hbase
+  storage.directory: null
+  storage.hbase.ext.google.bigtable.instance.id: graph-database-backend
+  storage.hbase.ext.google.bigtable.project.id: $PROJECT_ID
+  storage.hbase.ext.hbase.client.connection.impl: com.google.cloud.bigtable.hbase1_x.BigtableConnection
+  index.search.backend: elasticsearch
+  index.search.directory: null
+  cache.db-cache: true
+  cache.db-cache-clean-wait: 20
+  cache.db-cache-time: 180000
+  cache.db-cache-size: 0.5
+
+persistence:
+  enabled: false
