@@ -1,9 +1,5 @@
 resource "google_pubsub_topic" "example_topic" {
   name = "example"
-
-  labels = {
-    training = "quickstart-guide"
-  }
 }
 
 resource "google_pubsub_subscription" "example_subscription" {
@@ -17,10 +13,6 @@ resource "google_pubsub_subscription" "example_subscription" {
 
   expiration_policy {
     ttl = "300000.5s"
-  }
-
-  labels = {
-    training = "quickstart-guide"
   }
 }
 

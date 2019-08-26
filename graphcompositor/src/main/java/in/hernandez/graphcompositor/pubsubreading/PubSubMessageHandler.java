@@ -1,6 +1,6 @@
-package in.hernandez.twitterIngester.pubsubreading;
+package in.hernandez.graphcompositor.pubsubreading;
 
-import in.hernandez.twitterIngester.graph.TweetRepository;
+import in.hernandez.graphcompositor.graph.TweetRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

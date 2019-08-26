@@ -54,7 +54,7 @@ dependencies {
         exclude module: "jBCrypt"
         exclude module: "logback-classic"
     }
-    compile (group: 'org.janusgraph', name: 'janusgraph-es', version: '0.2.0'){
+    implementation (group: 'org.janusgraph', name: 'janusgraph-es', version: '0.2.0'){
         exclude module: "spring-boot-starter-logging"
         exclude module: "jBCrypt"
         exclude module: "logback-classic"

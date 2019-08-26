@@ -6,17 +6,17 @@ service:
     cloud.google.com/load-balancer-type: "Internal"
 
 elasticsearch:
+  deploy: true
   esConfig: {
     elasticsearch.yml:
       script.engine.groovy.inline.update = true
   }
-  deploy: true
 
 properties:
   storage.backend: hbase
   storage.directory: null
   storage.hbase.ext.google.bigtable.instance.id: graph-database-backend
-  storage.hbase.ext.google.bigtable.project.id: $PROJECT_ID
+  storage.hbase.ext.google.bigtable.project.id: janusgraph-and-gcp-example
   storage.hbase.ext.hbase.client.connection.impl: com.google.cloud.bigtable.hbase1_x.BigtableConnection
   index.search.backend: elasticsearch
   index.search.directory: null

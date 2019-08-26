@@ -1,4 +1,4 @@
-package in.hernandez.twitterIngester.graph;
+package in.hernandez.graphcompositor.graph;
 
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.janusgraph.core.JanusGraph;

@@ -1,4 +1,4 @@
-package in.hernandez.twitterIngester.pubsubreading;
+package in.hernandez.graphcompositor.pubsubreading;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,7 +7,6 @@ import org.springframework.cloud.gcp.pubsub.integration.AckMode;
 import org.springframework.cloud.gcp.pubsub.integration.inbound.PubSubInboundChannelAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.DependsOn;
 import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.integration.channel.DirectChannel;
 import org.springframework.messaging.MessageChannel;
@@ -34,11 +33,6 @@ public class PubSubInputConfig {
     @Bean
     public MessageChannel pubsubInputChannel() {
         return new DirectChannel();
-    }
-
-    @ServiceActivator(inputChannel = "pubsubInputChannel")
-    public void messageReceiver(String payload) {
-        logger.info("Message arrived! Payload: " + payload);
     }
 
     @Bean
